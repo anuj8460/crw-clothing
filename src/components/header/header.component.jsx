@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 import "./header.styles.scss";
 import { auth } from "./../../firebase/firebase.utlis";
 import { connect } from "react-redux";
-const Header = ({ currentUser }) => (
+const Header = (props) => (
   <div className="header">
     <Link to="/" className="logo-container">
       <Logo className="logo"></Logo>
@@ -16,7 +16,7 @@ const Header = ({ currentUser }) => (
       <Link className="option" to="/contact">
         Contact
       </Link>
-      {currentUser ? (
+      {props.currentUser ? (
         <div className="option" onClick={() => auth.signOut()}>
           SIGN OUT
         </div>
