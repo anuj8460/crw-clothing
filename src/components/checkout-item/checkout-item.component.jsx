@@ -6,7 +6,7 @@ import {
   removeItem,
   addItem,
 } from "./../../redux/cart/cart.actions";
-const CheckoutItem = ({ cartItem, clearItem, removeItem, addItem }) => {
+const CheckoutItem = ({ cartItem, clearItem, removeItem, addItem, total }) => {
   const { name, quantity, price, imageUrl } = cartItem;
   return (
     <div className="checkout-item">
@@ -37,4 +37,5 @@ const mapDispatchtoProps = (dispatch) => {
     addItem: (item) => dispatch(addItem(item)),
   };
 };
+
 export default connect(null, mapDispatchtoProps)(CheckoutItem);
